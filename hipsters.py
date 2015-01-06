@@ -15,7 +15,7 @@ def sumwithin(arr,pos,dist,filter=(lambda x:x)):
 			seen.add(arr[x][y])
 	return s, checked, seen
 
-def main(check_dist, ratio_switch,options=[0,1],coloroptions={0:(255,255,255),1:(0,0,0)}):
+def main(steps, check_dist, ratio_switch,options=[0,1],coloroptions={0:(255,255,255),1:(0,0,0)}):
 	pygame.init()
 	size = width, height = 300,300
 
@@ -23,7 +23,7 @@ def main(check_dist, ratio_switch,options=[0,1],coloroptions={0:(255,255,255),1:
 
 	people = [[random.choice(options) for x in range(width)] for y in range(height)]
 	step = 0
-	while step<10:
+	while step<steps:
 		step+=1
 		print("step "+str(step))
 		for event in pygame.event.get():
